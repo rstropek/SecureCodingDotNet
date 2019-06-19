@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28902.138
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-Symmetric-Encryption", "01-Symmetric-Encryption\01-Symmetric-Encryption.csproj", "{8F62DA8F-E7A1-475F-85C6-EB09C6250A3C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-Asymmetric-Encryption", "02-Asymmetric-Encryption\02-Asymmetric-Encryption.csproj", "{65E13B3B-E191-47C1-A089-D29B0818EB9F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03-Hashing", "03-Hashing\03-Hashing.csproj", "{AE95DF79-E251-420C-B910-37668B9AD2BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04-Signing", "04-Signing\04-Signing.csproj", "{3DED2E55-D56A-4CDA-829A-C76542F327F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F62DA8F-E7A1-475F-85C6-EB09C6250A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F62DA8F-E7A1-475F-85C6-EB09C6250A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F62DA8F-E7A1-475F-85C6-EB09C6250A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F62DA8F-E7A1-475F-85C6-EB09C6250A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65E13B3B-E191-47C1-A089-D29B0818EB9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E13B3B-E191-47C1-A089-D29B0818EB9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E13B3B-E191-47C1-A089-D29B0818EB9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E13B3B-E191-47C1-A089-D29B0818EB9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE95DF79-E251-420C-B910-37668B9AD2BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE95DF79-E251-420C-B910-37668B9AD2BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE95DF79-E251-420C-B910-37668B9AD2BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE95DF79-E251-420C-B910-37668B9AD2BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DED2E55-D56A-4CDA-829A-C76542F327F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DED2E55-D56A-4CDA-829A-C76542F327F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DED2E55-D56A-4CDA-829A-C76542F327F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DED2E55-D56A-4CDA-829A-C76542F327F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F80AA54E-A245-4CC4-83F4-996494BCD84F}
+	EndGlobalSection
+EndGlobal
