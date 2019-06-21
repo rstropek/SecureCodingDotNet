@@ -29,11 +29,11 @@ namespace Hashing
                     // Compare hash values
                     if (originalFileHash.SequenceEqual(copiedFileHash))
                     {
-                        Console.WriteLine("Files are equal");
+                        Console.WriteLine("Files can be considered equal");
                     }
                     else
                     {
-                        Console.WriteLine("Files are different");
+                        Console.WriteLine("Files can be considered different");
                     }
                 }
             }
