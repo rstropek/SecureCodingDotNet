@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04-Signing", "04-Signing\04
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06-BCrypt", "06-BCrypt\06-BCrypt.csproj", "{5495C413-B2E1-4439-88ED-BFAD62841A3D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05-RandomNumbers", "05-RandomNumbers\05-RandomNumbers.csproj", "{7B8E78E7-AB99-4D52-BEED-E695BD0F03BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5495C413-B2E1-4439-88ED-BFAD62841A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5495C413-B2E1-4439-88ED-BFAD62841A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5495C413-B2E1-4439-88ED-BFAD62841A3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B8E78E7-AB99-4D52-BEED-E695BD0F03BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B8E78E7-AB99-4D52-BEED-E695BD0F03BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B8E78E7-AB99-4D52-BEED-E695BD0F03BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B8E78E7-AB99-4D52-BEED-E695BD0F03BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

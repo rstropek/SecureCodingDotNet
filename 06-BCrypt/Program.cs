@@ -2,30 +2,22 @@
 
 namespace BCryptDemo
 {
-    class Program
+    class RandomNumbers
     {
         static void Main()
         {
             try
             {
-                const string secretPassword = "dJJcSb'7A5P@\\$TPhzj`H*M(fSyV%vNvz8(l";
-
-                // Note that this demo lets BCrypt choose the salt. This is the recommended
-                // way of hashing passwords with BCrypt
-
-                var hashedPassword = BCrypt.Net.BCrypt.HashPassword(secretPassword);
-                Console.WriteLine($"The hashed password is {hashedPassword}");
-
-                var hashedPasswordAgain = BCrypt.Net.BCrypt.HashPassword(secretPassword);
-                Console.WriteLine($"Hash it again and get  {hashedPasswordAgain}");
-
-                if (BCrypt.Net.BCrypt.Verify(secretPassword, hashedPassword))
+                var rand = new Random();
+                var counter = new int[10];
+                for (var i = 0; i < 1000000; i++)
                 {
-                    Console.WriteLine("Everything is fine, password is ok");
+                    counter[rand.Next(counter.Length)]++;
                 }
-                else
+
+                for (var i = 0; i < counter.Length; i++)
                 {
-                    Console.WriteLine("Attention, password and hash do not match");
+                    Console.WriteLine($"{i}: {counter[i]/1000000d, 7:p3}");
                 }
             }
             catch (Exception e)
