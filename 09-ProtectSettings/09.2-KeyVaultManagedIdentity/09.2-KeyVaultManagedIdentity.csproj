@@ -1,8 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <AssemblyName>KeyVaultManagedIdentity</AssemblyName>
+    <RootNamespace>KeyVaultManagedIdentity</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
