@@ -30,6 +30,8 @@ namespace LoggingSerilog
             }
             else
             {
+                // Note: Read more about exception handling in ASP.NET Core
+                // at https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-2.2
                 app.UseExceptionHandler(errorApp =>
                 {
                     errorApp.Run(async context =>
