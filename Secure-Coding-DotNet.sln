@@ -39,7 +39,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Exceptions", "04-Excepti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12-ExceptionFilters", "12-ExceptionFilters\12-ExceptionFilters.csproj", "{40F7ADDB-022E-4B45-BEBD-30AFED38A575}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13-LoggingSerilog", "13-LoggingSerilog\13-LoggingSerilog.csproj", "{009C9762-1E52-4698-B083-2E38BD0AD3F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13-LoggingSerilog", "13-LoggingSerilog\13-LoggingSerilog.csproj", "{009C9762-1E52-4698-B083-2E38BD0AD3F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "14-EntityFramework", "14-EntityFramework\14-EntityFramework.csproj", "{161F3E86-F221-4D98-B0B1-DAF2C1DCDF3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,6 +109,10 @@ Global
 		{009C9762-1E52-4698-B083-2E38BD0AD3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{009C9762-1E52-4698-B083-2E38BD0AD3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{009C9762-1E52-4698-B083-2E38BD0AD3F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{161F3E86-F221-4D98-B0B1-DAF2C1DCDF3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{161F3E86-F221-4D98-B0B1-DAF2C1DCDF3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{161F3E86-F221-4D98-B0B1-DAF2C1DCDF3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{161F3E86-F221-4D98-B0B1-DAF2C1DCDF3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
