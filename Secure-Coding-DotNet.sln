@@ -35,6 +35,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-NetCoreDataProtection", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11-DataProtectionPasswordHash", "11-DataProtectionPasswordHash\11-DataProtectionPasswordHash.csproj", "{F9B6EA37-2BF6-4EF0-9026-5BC8AF87D908}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Exceptions", "04-Exceptions", "{AA11F4FB-8308-4C70-A230-B92DE4C0C6D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12-ExceptionFilters", "12-ExceptionFilters\12-ExceptionFilters.csproj", "{40F7ADDB-022E-4B45-BEBD-30AFED38A575}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +97,10 @@ Global
 		{F9B6EA37-2BF6-4EF0-9026-5BC8AF87D908}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9B6EA37-2BF6-4EF0-9026-5BC8AF87D908}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9B6EA37-2BF6-4EF0-9026-5BC8AF87D908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40F7ADDB-022E-4B45-BEBD-30AFED38A575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F7ADDB-022E-4B45-BEBD-30AFED38A575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40F7ADDB-022E-4B45-BEBD-30AFED38A575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40F7ADDB-022E-4B45-BEBD-30AFED38A575}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,6 +119,7 @@ Global
 		{C0BABEBA-3134-4571-9DEC-A84C06FF7654} = {40A04234-C471-4B45-B472-8257AAA384BC}
 		{A25E04D0-EA3C-4995-8B4D-3BB681DEC1DA} = {FC21CF0A-6509-46D7-802F-26311582AA0F}
 		{F9B6EA37-2BF6-4EF0-9026-5BC8AF87D908} = {FC21CF0A-6509-46D7-802F-26311582AA0F}
+		{40F7ADDB-022E-4B45-BEBD-30AFED38A575} = {AA11F4FB-8308-4C70-A230-B92DE4C0C6D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F80AA54E-A245-4CC4-83F4-996494BCD84F}
