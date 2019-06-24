@@ -27,25 +27,32 @@ namespace KeyVaultManagedIdentity
                 {
                     if (string.IsNullOrEmpty(connectionString))
                     {
+                        // Get secret from KeyVault using Managed Identity.
+
+                        // Note that KeyVault references (see https://docs.microsoft.com/en-us/azure/app-service/app-service-key-vault-references)
+                        // would be an option. Unfortunately, they currently do require version information.
+                        // This makes changing secrets harder because version information has to be changed
+                        // in web app's settings.
                         var azureServiceTokenProvider = new AzureServiceTokenProvider();
-                        var keyVaultClient = new KeyVaultClient(
-                            new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
-
-                        var dbUser = await keyVaultClient.GetSecretAsync(dbSettings.DbAdminUserSecretUri);
-                        var dbPassword = await keyVaultClient.GetSecretAsync(dbSettings.DbAdminUserPasswordSecretUri);
-
-                        var builder = new SqlConnectionStringBuilder
+                        using (var keyVaultClient = new KeyVaultClient(
+                            new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback)))
                         {
-                            TrustServerCertificate = false,
-                            Encrypt = true,
-                            InitialCatalog = dbSettings.DbDatabaseName,
-                            DataSource = $"tcp:{dbSettings.DbServer}",
-                            UserID = dbUser.Value,
-                            Password = dbPassword.Value
-                        };
+                            var dbUser = await keyVaultClient.GetSecretAsync(dbSettings.DbAdminUserSecretUri);
+                            var dbPassword = await keyVaultClient.GetSecretAsync(dbSettings.DbAdminUserPasswordSecretUri);
 
-                        connectionString = builder.ToString();
-                        return connectionString;
+                            var builder = new SqlConnectionStringBuilder
+                            {
+                                TrustServerCertificate = false,
+                                Encrypt = true,
+                                InitialCatalog = dbSettings.DbDatabaseName,
+                                DataSource = $"tcp:{dbSettings.DbServer}",
+                                UserID = dbUser.Value,
+                                Password = dbPassword.Value
+                            };
+
+                            connectionString = builder.ToString();
+                            return connectionString;
+                        }
                     }
                 }
                 finally
