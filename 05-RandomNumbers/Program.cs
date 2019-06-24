@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Security.Cryptography;
 
-namespace BCryptDemo
+namespace RandomNumbers
 {
-    class RandomNumbers
+    class Program
     {
         static void Main()
         {

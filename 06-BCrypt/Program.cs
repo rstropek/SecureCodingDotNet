@@ -2,7 +2,7 @@
 
 namespace BCryptDemo
 {
-    class RandomNumbers
+    class Program
     {
         static void Main()
         {
