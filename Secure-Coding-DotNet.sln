@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Exceptions", "04-Excepti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12-ExceptionFilters", "12-ExceptionFilters\12-ExceptionFilters.csproj", "{40F7ADDB-022E-4B45-BEBD-30AFED38A575}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13-LoggingSerilog", "13-LoggingSerilog\13-LoggingSerilog.csproj", "{009C9762-1E52-4698-B083-2E38BD0AD3F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,10 @@ Global
 		{40F7ADDB-022E-4B45-BEBD-30AFED38A575}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40F7ADDB-022E-4B45-BEBD-30AFED38A575}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40F7ADDB-022E-4B45-BEBD-30AFED38A575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{009C9762-1E52-4698-B083-2E38BD0AD3F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{009C9762-1E52-4698-B083-2E38BD0AD3F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{009C9762-1E52-4698-B083-2E38BD0AD3F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{009C9762-1E52-4698-B083-2E38BD0AD3F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,6 +126,7 @@ Global
 		{A25E04D0-EA3C-4995-8B4D-3BB681DEC1DA} = {FC21CF0A-6509-46D7-802F-26311582AA0F}
 		{F9B6EA37-2BF6-4EF0-9026-5BC8AF87D908} = {FC21CF0A-6509-46D7-802F-26311582AA0F}
 		{40F7ADDB-022E-4B45-BEBD-30AFED38A575} = {AA11F4FB-8308-4C70-A230-B92DE4C0C6D4}
+		{009C9762-1E52-4698-B083-2E38BD0AD3F8} = {AA11F4FB-8308-4C70-A230-B92DE4C0C6D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F80AA54E-A245-4CC4-83F4-996494BCD84F}
