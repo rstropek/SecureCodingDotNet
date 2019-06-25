@@ -29,7 +29,7 @@ namespace RandomNumbers
                 const byte lastValidAsciiValue = 126; // ~
 
                 // Number of possible characters in password
-                const byte alphabetLength = 126 - 33 + 1;
+                const byte alphabetLength = lastValidAsciiValue - firstValidAsciiValue + 1;
                 const byte maxFairValue = (byte.MaxValue / alphabetLength) * alphabetLength;
 
                 using (var rngCsp = new RNGCryptoServiceProvider())
