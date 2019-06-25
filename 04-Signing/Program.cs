@@ -31,7 +31,7 @@ namespace Signing
                         var rsaFormatter = new RSAPKCS1SignatureFormatter(rsa);
 
                         // Set the hash algorithm
-                        rsaFormatter.SetHashAlgorithm("SHA512");
+                        rsaFormatter.SetHashAlgorithm(HashAlgorithmName.SHA512.ToString());
 
                         // Create a signature
                         signedHash = rsaFormatter.CreateSignature(fileHash);
@@ -40,7 +40,7 @@ namespace Signing
 
                         // Use a deformatter to verify signature
                         var rsaDeformatter = new RSAPKCS1SignatureDeformatter(rsa);
-                        rsaDeformatter.SetHashAlgorithm("SHA512");
+                        rsaDeformatter.SetHashAlgorithm(HashAlgorithmName.SHA512.ToString());
                         if (rsaDeformatter.VerifySignature(fileHash, signedHash))
                         {
                             Console.WriteLine("Signature is valid");

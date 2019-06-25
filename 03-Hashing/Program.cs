@@ -33,7 +33,7 @@ namespace Hashing
                     }
                     else
                     {
-                        Console.WriteLine("Files can be considered different");
+                        Console.WriteLine("Files are different");
                     }
                 }
             }
