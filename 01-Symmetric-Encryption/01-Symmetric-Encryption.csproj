@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <RootNamespace>SymmetricEncryption</RootNamespace>
     <AssemblyName>SymmetricEncryption</AssemblyName>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
