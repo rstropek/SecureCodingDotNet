@@ -1,0 +1,13 @@
+{
+  "solution": {
+    "path": "Secure-Coding-DotNet.sln",
+    "projects": [
+      "01-Symmetric-Encryption\\01-Symmetric-Encryption.csproj",
+      "02-Asymmetric-Encryption\\02-Asymmetric-Encryption.csproj",
+      "03-Hashing\\03-Hashing.csproj",
+      "04-Signing\\04-Signing.csproj",
+      "05-RandomNumbers\\05-RandomNumbers.csproj",
+      "06-BCrypt\\06-BCrypt.csproj"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "solution": {
+    "path": "Secure-Coding-DotNet.sln",
+    "projects": [
+      "10-NetCoreDataProtection\\10-NetCoreDataProtection.csproj",
+      "11-DataProtectionPasswordHash\\11-DataProtectionPasswordHash.csproj"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "Secure-Coding-DotNet.sln",
+    "projects": [
+      "14-EntityFramework\\14-EntityFramework.csproj"
+    ]
+  }
+}
