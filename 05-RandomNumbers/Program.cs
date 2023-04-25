@@ -1,5 +1,5 @@
-﻿using System;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
+
 try
 {
     // Generate 10 passwords
@@ -24,22 +24,19 @@ static string CreatePassword(int length)
         const byte alphabetLength = lastValidAsciiValue - firstValidAsciiValue + 1;
         const byte maxFairValue = (byte.MaxValue / alphabetLength) * alphabetLength;
 
-        using (var rngCsp = new RNGCryptoServiceProvider())
+        var random = new byte[1];
+        for (var i = 0; i < len; i++)
         {
-            var random = new byte[1];
-            for (var i = 0; i < len; i++)
+            // We ignore values >= maxFairValue because otherwise the
+            // password characters would not be used equally often.
+            do
             {
-                // We ignore values >= maxFairValue because otherwise the
-                // password characters would not be used equally often.
-                do
-                {
-                    // Get random byte
-                    rngCsp.GetBytes(random);
-                }
-                while (random[0] >= maxFairValue);
-
-                builder[i] = (char)((random[0] % (lastValidAsciiValue - firstValidAsciiValue + 1)) + firstValidAsciiValue);
+                // Get random byte
+                random = RandomNumberGenerator.GetBytes(1);
             }
+            while (random[0] >= maxFairValue);
+
+            builder[i] = (char)((random[0] % (lastValidAsciiValue - firstValidAsciiValue + 1)) + firstValidAsciiValue);
         }
     });
 }

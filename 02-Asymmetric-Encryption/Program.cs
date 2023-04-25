@@ -23,13 +23,11 @@ catch (Exception e)
 
 static (RSAParameters publicKey, RSAParameters publicPrivateKey) GenerateKeyPair()
 {
-    // Create object implementing RSA. Note that this version of the
-    // constructor generates a random 2048-bit key pair.
-    using (var rsa = new RSACng())
-    {
-        return (publicKey: rsa.ExportParameters(false),
-            publicPrivateKey: rsa.ExportParameters(true));
-    }
+    // Create object implementing RSA.
+    using var rsa = RSA.Create();
+   
+    return (publicKey: rsa.ExportParameters(false),
+        publicPrivateKey: rsa.ExportParameters(true));
 }
 
 static async Task<(byte[] encryptedKey, byte[] encryptedIV, byte[] ciphertext)> GetEncryptedData(RSAParameters publicKey)
@@ -39,55 +37,51 @@ static async Task<(byte[] encryptedKey, byte[] encryptedIV, byte[] ciphertext)> 
     byte[] iv;
 
     // Use AES to encrypt secret message.
-    using (var aes = new AesCng())
+    using (var aes = Aes.Create())
     {
         key = aes.Key;
         iv = aes.IV;
-        using (var msEncrypt = new MemoryStream())
+        using var msEncrypt = new MemoryStream();
+        using (var csEncrypt = new CryptoStream(msEncrypt, aes.CreateEncryptor(), CryptoStreamMode.Write))
+        using (var swEncrypt = new StreamWriter(csEncrypt))
         {
-            using (var csEncrypt = new CryptoStream(msEncrypt, aes.CreateEncryptor(), CryptoStreamMode.Write))
-            using (var swEncrypt = new StreamWriter(csEncrypt))
-            {
-                await swEncrypt.WriteAsync("Secret Message");
-            }
-
-            ciphertext = msEncrypt.ToArray();
+            await swEncrypt.WriteAsync("Secret Message");
         }
+
+        ciphertext = msEncrypt.ToArray();
     }
 
     // Use RSA to encrypt AES key/IV
-    using (var rsa = new RSACng())
-    {
-        // Import given public key to RSA
-        rsa.ImportParameters(publicKey);
+    using var rsa = RSA.Create();
+    
+    // Import given public key to RSA
+    rsa.ImportParameters(publicKey);
 
-        // Encrypt symmetric key/IV using RSA (public key).
-        // Return encrypted key/IV and ciphertext
-        return (encryptedKey: rsa.Encrypt(key, RSAEncryptionPadding.OaepSHA512),
-            encryptedIV: rsa.Encrypt(iv, RSAEncryptionPadding.OaepSHA512),
-            ciphertext);
-    }
+    // Encrypt symmetric key/IV using RSA (public key).
+    // Return encrypted key/IV and ciphertext
+    return (encryptedKey: rsa.Encrypt(key, RSAEncryptionPadding.OaepSHA512),
+        encryptedIV: rsa.Encrypt(iv, RSAEncryptionPadding.OaepSHA512),
+        ciphertext);
 }
 
 static async Task<string> GetDecryptedMessage((byte[] encryptedKey, byte[] encryptedIV, byte[] ciphertext) encryptedMessage,
     RSAParameters publicPrivateKey)
 {
-    using (var rsa = new RSACng())
-    {
-        // Import key pair
-        rsa.ImportParameters(publicPrivateKey);
+    using var rsa = RSA.Create();
+    
+    // Import key pair
+    rsa.ImportParameters(publicPrivateKey);
 
-        // Decrypt key/IV using asymmetric RSA algorithm
-        var key = rsa.Decrypt(encryptedMessage.encryptedKey, RSAEncryptionPadding.OaepSHA512);
-        var iv = rsa.Decrypt(encryptedMessage.encryptedIV, RSAEncryptionPadding.OaepSHA512);
+    // Decrypt key/IV using asymmetric RSA algorithm
+    var key = rsa.Decrypt(encryptedMessage.encryptedKey, RSAEncryptionPadding.OaepSHA512);
+    var iv = rsa.Decrypt(encryptedMessage.encryptedIV, RSAEncryptionPadding.OaepSHA512);
 
-        // Use symmetric AES algorithm to decrypt secret message
-        using (var aes = new AesCng() { Key = key, IV = iv })
-        using (var msDecrypt = new MemoryStream(encryptedMessage.ciphertext))
-        using (var csDecrypt = new CryptoStream(msDecrypt, aes.CreateDecryptor(), CryptoStreamMode.Read))
-        using (var srDecrypt = new StreamReader(csDecrypt))
-        {
-            return await srDecrypt.ReadToEndAsync();
-        }
-    }
+    // Use symmetric AES algorithm to decrypt secret message
+    using var aes = Aes.Create();
+    aes.Key = key;
+    aes.IV = iv;
+    using var msDecrypt = new MemoryStream(encryptedMessage.ciphertext);
+    using var csDecrypt = new CryptoStream(msDecrypt, aes.CreateDecryptor(), CryptoStreamMode.Read);
+    using var srDecrypt = new StreamReader(csDecrypt);
+    return await srDecrypt.ReadToEndAsync();
 }
