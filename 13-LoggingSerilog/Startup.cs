@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -19,10 +19,10 @@ namespace LoggingSerilog
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddControllers();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -53,7 +53,11 @@ namespace LoggingSerilog
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+              app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers(); // For API Controllers
+            });
         }
     }
 }
