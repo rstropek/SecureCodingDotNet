@@ -54,7 +54,7 @@ static bool VerifyFile(byte[] key, String sourceFile)
         using var inStream = new FileStream(sourceFile, FileMode.Open);
         
         // Read in the storedHash.
-        inStream.Read(storedHash, 0, storedHash.Length);
+        inStream.ReadExactly(storedHash);
         
         // Compute the hash of the remaining contents of the file.
         // The stream is properly positioned at the beginning of the content,
