@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.3-KeyVaultConfigurationProvider", "09.3-KeyVaultConfigurationProvider.csproj", "{4BC89CB7-3B48-6DD9-BC44-669AB5530023}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BC89CB7-3B48-6DD9-BC44-669AB5530023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC89CB7-3B48-6DD9-BC44-669AB5530023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC89CB7-3B48-6DD9-BC44-669AB5530023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC89CB7-3B48-6DD9-BC44-669AB5530023}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2634AC8-66E1-4062-8A0E-A2655DED87E5}
+	EndGlobalSection
+EndGlobal
