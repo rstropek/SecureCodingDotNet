@@ -1,8 +1,0 @@
-{
-  "solution": {
-    "path": "Secure-Coding-DotNet.sln",
-    "projects": [
-      "15-StaticCodeAnalysis\\15-StaticCodeAnalysis.csproj"
-    ]
-  }
-}

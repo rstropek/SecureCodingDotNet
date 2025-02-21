@@ -1,9 +1,0 @@
-{
-  "solution": {
-    "path": "Secure-Coding-DotNet.sln",
-    "projects": [
-      "12-ExceptionFilters\\12-ExceptionFilters.csproj",
-      "13-LoggingSerilog\\13-LoggingSerilog.csproj"
-    ]
-  }
-}
